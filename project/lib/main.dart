@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, unused_local_variable, prefer_const_declarations
 
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'package:project/pages/login_page.dart';
+import 'pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,10 +12,23 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
+  
 
     return MaterialApp(
-      home: HomePage(),
+    
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(primarySwatch: Colors.lightGreen),
+      initialRoute: "/home",
+
+      routes:{
+      "/":(context)=>LoginPage(),
+      "/home": (context)=>HomePage(),
+      "/login":(context)=>LoginPage()
+
+      },
     );
+
+    
+    }
   }
-}
+
