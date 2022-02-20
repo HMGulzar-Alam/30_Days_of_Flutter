@@ -1,20 +1,24 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable, prefer_const_declarations
-
 import 'package:flutter/material.dart';
+import 'package:project/pages/login_page.dart';
 import 'home_page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    
-
     return MaterialApp(
-      home: HomePage(),
+      themeMode: ThemeMode.dark,
+      theme: ThemeData(primarySwatch: Colors.grey),
+      routes: {
+        "/": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+        "/home": (context) => HomePage()
+      },
     );
   }
 }
